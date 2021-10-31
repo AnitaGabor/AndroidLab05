@@ -43,10 +43,12 @@ class QuestionFragment : Fragment() {
             if ( numberOfQuestion < numberOfQuestions) {
                 processAnswer(it)
                 setNextQusetion()
+                if(numberOfQuestion == numberOfQuestions){
+                    binding.navigationButton.text = "SUBMIT";
+                }
             } else {
                 if ( numberOfQuestion == numberOfQuestions) {
                     processAnswer(it)
-                    binding.navigationButton.text = "SUBMIT";
                     it.findNavController().navigate(R.id.action_questionFragment_to_quizEndFragment)
 
                 }
